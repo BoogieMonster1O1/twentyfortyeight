@@ -6,17 +6,17 @@ import org.junit.jupiter.api.Test;
 class AppTest {
 	@Test
 	public void testFrame() throws InterruptedException {
-		App app = new App(4);
+		App app = new App(4, App.CLASSIC, 0);
 		app.getFrame()[1][1] = 1024;
 		app.getFrame()[1][2] = 64;
 		app.getFrame()[2][1] = 128;
 		app.getFrame()[3][0] = 2048;
 		app.printFrame();
 		Thread.sleep(3000L);
-		app.getFrame()[2][0] = 256;
+		app.addNumber();
 		app.printFrame();
 		Thread.sleep(3000L);
-		app.getFrame()[1][0] = 256;
+		app.addNumber();
 		app.printFrame();
 		Thread.sleep(2000L);
 	}
